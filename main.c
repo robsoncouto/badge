@@ -17,9 +17,32 @@ int main(void){
   drawbitmap(buffer, 0, 0, picture,50,64,1);
   drawstring(buffer,51,0,"ROBSON COUTO");
 
+  drawstring(buffer,51,2,"Eng Eletrica");
+  drawstring(buffer,51,4,"UFC");
+
 
   drawstring(buffer,51,6,"github:");
   drawstring(buffer,51,7,"@robsoncouto");
   write_buffer(buffer);
-  while(01);
+  while(01){
+    if(button_pressed()){
+
+      while (1) {
+        for(int i=0;i<164;i=i+4){
+          clear_buffer(buffer);
+          drawbitmap(buffer, 0,  0, dragao+i,128,8,1);
+          drawbitmap(buffer, 0,  8, dragao+1*292+i,128,8,1);//FIXME ugliest hack ever, not proud
+          drawbitmap(buffer, 0, 16, dragao+2*292+i,128,8,1);
+          drawbitmap(buffer, 0, 24, dragao+3*292+i,128,8,1);
+          drawbitmap(buffer, 0, 32, dragao+4*292+i,128,8,1);
+          drawbitmap(buffer, 0, 40, dragao+5*292+i,128,8,1);
+          drawbitmap(buffer, 0, 48, dragao+6*292+i,128,8,1);
+          drawbitmap(buffer, 0, 56, dragao+7*292+i,128,8,1);
+          write_buffer(buffer);
+          _delay_ms(300);
+        }
+      }
+
+    }
+  }
 }
