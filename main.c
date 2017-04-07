@@ -14,6 +14,12 @@ uint8_t buffer[128*64/8];
 int main(void){
   init_hardware(); //low level atmega stuff (PORTS, ACD, etc)
   clear_screen();
-  drawbitmap(buffer, 0, 0, picture,64,64,1);
+  drawbitmap(buffer, 0, 0, picture,50,64,1);
+  drawstring(buffer,51,0,"ROBSON COUTO");
+
+
+  drawstring(buffer,51,6,"github:");
+  drawstring(buffer,51,7,"@robsoncouto");
+  write_buffer(buffer);
   while(01);
 }
